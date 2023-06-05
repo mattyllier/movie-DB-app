@@ -1,0 +1,19 @@
+.searchBar {
+    border: solid 10px black;
+    border-radius: 40px;
+    height: 60px;
+    width: 700px;
+    color: lightgrey;
+    background-color: darkslategrey;
+    font-size: 56px;
+    text-align: center;
+    outline: none;
+}
+
+.searchResults {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,45 @@
+.list {
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.img {
+    height: 400px;
+}
+
+.button {
+    height: 400px;
+    width: 75px;
+    background-color: white;
+    opacity: 70%;
+    transition: 0.1s;
+    /* box-shadow: rgb(255, 255, 255) 0px 0px 50px 10px; */
+    border: none;
+}
+.button:hover{
+    opacity: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+#left {
+    position: absolute;
+}
+
+#right {
+    position: absolute;
+    left: 1444px;
+}
+
+.icon {
+    height: 80%;
+    width: 80%;
+}
