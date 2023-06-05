@@ -10,7 +10,7 @@ export default function Trending({results}){
     return (
         <div className='list'>
             <button id='left' className={ref===0 ? 'hidden' : 'button'} onClick={()=>scroll(-20)}>{<AiOutlineArrowLeft className='icon'/>}</button>
-            {results.map(x=><div key={x.id}><img className='img' src={`https://image.tmdb.org/t/p/w500${x.poster_path}`}/></div>)}
+            {results.map(x=>x.poster_path!==null ? <div key={x.id}><img className='img' src={`https://image.tmdb.org/t/p/w500${x.poster_path}`}/></div> : x = '')}
             <button id='right' className={ref===2000 ? 'hidden' : 'button'} onClick={()=>scroll(20)}>{<AiOutlineArrowRight className='icon'/>}</button>
         </div>
     )

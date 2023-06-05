@@ -13,22 +13,28 @@ export default function Search(props){
         e.target.value !== '' ? setSearchIsActive(true) : setSearchIsActive(false)
     }
     //const handleTileClick = (e)=>setSelected(e.target.value)
+
     useEffect(()=>{
+        if(search===''){
+            setFiltered([])
+            return
+        }
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${props.apiKey}&language=en-US&query=${search}`)
         .then(res=>res.json())
-        .then(res=>setFiltered(res))
-    },[])
+        .then(res=>setFiltered(res.results) || [])
+        .catch((error)=>{
+            console.error('Error fetching movie data', error)
+            setFiltered([])
+        })
+    },[search,props.apiKey])
     console.log(filtered)
     return (
         <>
-      <input onChange={handleChange} value={props.search} placeholder='Enter Title' className='searchBar'/>
+      <input onChange={handleChange} value={search} placeholder='Enter Title' className='searchBar'/>
       <div className={searchIsActive ? 'searchResults' : 'hidden'}>
         <h1>{`Results for ${search}`}</h1>
-        {/* <List results={filtered}/> */}
-        <h1>working</h1>
+        {filtered.length>0 ? <List results={filtered}/> : <h1>No results found.</h1>}
       </div>
-      {/* <button onClick={()=>console.log(props.results)}>Click</button> */}
-      {/* {filtered.map(result=><div onClick={handleTileClick} key={result.id}><Tile id={selected}/></div>)} */}
         </>
     )
 }
