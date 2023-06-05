@@ -32,7 +32,7 @@ export default function Search(props){
         <>
       <input onChange={handleChange} value={search} placeholder='Enter Title' className='searchBar'/>
       <div className={searchIsActive ? 'searchResults' : 'hidden'}>
-        <h1>{`Results for ${search}`}</h1>
+        <h1>{`Results for '${search}'`}</h1>
         {filtered.length>0 ? <List results={filtered}/> : <h1>No results found.</h1>}
       </div>
         </>

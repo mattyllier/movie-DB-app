@@ -1,16 +1,24 @@
 .list {
     display: flex;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    scrollbar-width: none;
+    position: relative;
+    overflow: hidden;
+    /* scrollbar-width: none; */
 }
 
-.list::-webkit-scrollbar {
+/* .list::-webkit-scrollbar {
     display: none;
+} */
+
+.posterTile {
+    height: 400px;
+    transition: all, ease-out 0.2s;
+    cursor: pointer;
 }
 
-.img {
-    height: 400px;
+.posterTile:hover {
+    transform: scale(1.1);
+    box-shadow: rgb(255, 255, 255) 0px 0px 50px 10px;
 }
 
 .button {
@@ -19,8 +27,12 @@
     background-color: white;
     opacity: 70%;
     transition: 0.1s;
-    /* box-shadow: rgb(255, 255, 255) 0px 0px 50px 10px; */
     border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 .button:hover{
     opacity: 100%;
@@ -31,12 +43,13 @@
 }
 
 #left {
-    position: absolute;
+    left: 0;
+    display: block;
 }
 
 #right {
-    position: absolute;
-    left: 1444px;
+    right: 0;
+    display: block;
 }
 
 .icon {

@@ -6,13 +6,14 @@ import List from './Components/List/List'
 function App() {
   const [results,setResults] = useState([])
   //const [search,setSearch] = useState('')
-  const [filtered, setFiltered] = useState([])
+  //const [filtered, setFiltered] = useState([])
   const [selected,setSelected] = useState('')
   const [actionResults, setActionResults] = useState([])
 
   const apiKey = '794aa50d4099c47177386a08691f3ce6'
   const genreId = 8;
 
+  //default - trending
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
     .then(res=>res.json())
@@ -27,11 +28,11 @@ function App() {
     .then(res=>setActionResults(res.results))
   },[])
 
-  const handleClick = (e)=>setSelected(e.target.value)
+  //const handleClick = (e)=>setSelected(e.target.value)
   
   return (
     <div className="App">
-      <Search filtered={filtered} apiKey={apiKey}/>
+      <Search apiKey={apiKey}/>
       <h1 className='header'>Trending Now</h1>
       <List results={results}/>
       <h1 className='header'>Action</h1>
