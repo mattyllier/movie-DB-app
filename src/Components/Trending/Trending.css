@@ -1,0 +1,14 @@
+.list {
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+.img {
+    height: 400px;
+}
+
+.button {
+    height: 100px;
+    width: 50px;
+}
