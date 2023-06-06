@@ -5,7 +5,7 @@
     width: 370px;
     color: lightgrey;
     background-color: black;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     outline: none;
     position: absolute;
@@ -23,6 +23,11 @@
 .genre {
     font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.genre:hover {
+    background-color: grey;
 }
 
 .visible {

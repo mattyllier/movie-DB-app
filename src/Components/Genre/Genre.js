@@ -22,12 +22,12 @@ export default function Genre({apiKey}){
     }
     return (
         <>
-        <div className='searchGenre'>
+        <select className='searchGenre'>
             <option defaultValue>Search Genre</option>
             {genres.map(genre=><option className='genre' key={genre.id} onClick={handleClick}>{genre.name}</option>)}
-        </div>
-        <div>
-
+        </select>
+        <div className={selectedGenre!=='' ? 'visible' : 'hidden'}>
+            <h1>{selectedGenre.name}</h1>
             <List results={selectedResults}/>
          </div>
         </>
