@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import Search from './Components/Search/Search'
 import List from './Components/List/List'
+import Genre from './Components/Genre/Genre'
 
 function App() {
   const [results,setResults] = useState([])
@@ -33,6 +34,7 @@ function App() {
   return (
     <div className="App">
       <Search apiKey={apiKey}/>
+      <Genre apiKey={apiKey}/>
       <h1 className='header'>Trending Now</h1>
       <List results={results}/>
       <h1 className='header'>Action</h1>

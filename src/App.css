@@ -1,6 +1,15 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
   text-align: center;
-  background-color: darkslategrey;
+  background-color: rgb(18, 28, 28);
   color: white;
   font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.topBar {
+  display: flex;
+  align-items: space-evenly;
 }
