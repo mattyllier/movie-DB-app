@@ -10,7 +10,6 @@ export default function List({results}){
     const [selected,setSelected] = useState('')
     const handleClick = (e)=>{
         setSelected(e.target.id)
-      //  console.log(selected)
     }
     return (
         <div>
@@ -20,7 +19,7 @@ export default function List({results}){
             <button id='right' className='button' onClick={handleRight}>{<AiOutlineArrowRight className='icon'/>}</button>
         </div>
         <div className={selected!=='' ? 'tile' : 'hidden'}>
-            <Tile id={selected}/>
+            <Tile id={selected} setSelected={setSelected}/>
         </div>
         </div>
     )
