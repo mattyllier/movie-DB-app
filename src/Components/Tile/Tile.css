@@ -31,6 +31,10 @@
     display: none;
 }
 
+.modalIcon {
+    background: transparent;
+}
+
 .modalButton {
     cursor: pointer;
     width: 500px;

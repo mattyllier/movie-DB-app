@@ -27,7 +27,6 @@ export default function Search(props){
             setFiltered([])
         })
     },[search,props.apiKey])
-   // console.log(filtered)
     return (
         <>
       <input onChange={handleChange} value={search} placeholder='Enter Title' className='searchBar'/>

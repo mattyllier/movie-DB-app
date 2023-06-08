@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Search from './Components/Search/Search'
 import List from './Components/List/List'
 import Genre from './Components/Genre/Genre'
+import Graphic from './bright-neon-cinema-sign-with-movie-camera-vector.jpg'
 
 function App() {
   const [trending,setTrending] = useState([])
@@ -63,8 +64,12 @@ function App() {
   
   return (
     <div className="App">
-      <Search apiKey={apiKey}/>
-      <Genre apiKey={apiKey}/>
+      <img className='graphic' src={Graphic}></img>
+      <h1 className='top'>Title</h1>
+      <div>
+        <Search apiKey={apiKey}/>
+        <Genre apiKey={apiKey}/>
+      </div>
       <h1 className='header'>Trending Now</h1>
       <List results={trending}/>
       <h1 className='header'>Top Action</h1>

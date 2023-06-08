@@ -25,7 +25,7 @@ export default function Genre({apiKey}){
    console.log(selectedGenre)
     return (
         <>
-        <select className='searchGenre' value={selectedGenre} onChange={handleChange} onClick={(e)=>console.log(e.target.innerText)}>
+        <select className='searchGenre' value={selectedGenre} onChange={handleChange}>
             <option defaultValue>Search Genre</option>
             {genres.map(genre=><option className='genre' value={genre.id} key={genre.id}>{genre.name}</option>)}
         </select>

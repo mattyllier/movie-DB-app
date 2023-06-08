@@ -31,7 +31,7 @@ export default function Tile({ id , setSelected}) {
             <div className={modalOpen ? 'film' : 'hidden'}>
                 <iframe className='iframe' src={`https://www.youtube.com/embed/${trailer}?enablejsapi=1`} />
                 <div className='info'>
-                    <button className='modalButton' onClick={handleClick}><GrClose/></button>
+                    <button className='modalButton' onClick={handleClick}><GrClose className='modalIcon'/></button>
                     <h1>{info.title}</h1>
                     <h3>{info.release_date!=='' ? `Release Date: ${info.release_date}` : 'Release Date: TBA'}</h3>
                     <h3>{info.runtime!== 0 ? `${info.runtime} min` : ''}</h3>

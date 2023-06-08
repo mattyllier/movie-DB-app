@@ -1,16 +1,22 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: black;
 }
 
 .App {
   text-align: center;
-  background-color: black;
+  /* background-color: black; */
   color: white;
 }
 
-.topBar {
-  display: flex;
-  align-items: space-evenly;
+.graphic {
+  height: 150px;
+  width: 150px;
+  /* position: absolute; */
+}
+
+.top {
+  font-size: 40px;
 }
 
 .header {
