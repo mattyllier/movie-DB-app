@@ -8,6 +8,10 @@ function App() {
   const [trending,setTrending] = useState([])
   const [topAction, setTopAction] = useState([])
   const [topSciFi, setTopSciFi] = useState([])
+  const [topFamily, setTopFamily] = useState([])
+  const [topDocs, setTopDocs] = useState([])
+  const [topComedy, setTopComedy] = useState([])
+  const [topHorror, setTopHorror] = useState([])
 
   const apiKey = '794aa50d4099c47177386a08691f3ce6'
 
@@ -29,6 +33,32 @@ function App() {
     .then(res=>setTopSciFi(res.results))
   },[])
 
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=10751`)
+    .then(res=>res.json())
+    .then(res=>setTopFamily(res.results))
+  },[])
+
+  
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=99`)
+    .then(res=>res.json())
+    .then(res=>setTopDocs(res.results))
+  },[])
+  
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=35`)
+    .then(res=>res.json())
+    .then(res=>setTopComedy(res.results))
+  },[])
+
+  useEffect(()=>{
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=27`)
+    .then(res=>res.json())
+    .then(res=>setTopHorror(res.results))
+  },[])
+  
+
   //const handleClick = (e)=>setSelected(e.target.value)
   
   return (
@@ -41,6 +71,14 @@ function App() {
       <List results={topAction}/>
       <h1 className='header'>Top Science Fiction</h1>
       <List results={topSciFi}/>
+      <h1 className='header'>Top Family</h1>
+      <List results={topFamily}/>
+      <h1 className='header'>Top Documentaries</h1>
+      <List results={topDocs}/>
+      <h1 className='header'>Top Comedy</h1>
+      <List results={topComedy}/>
+      <h1 className='header'>Top Horror</h1>
+      <List results={topHorror}/>
     </div>
   );
 }

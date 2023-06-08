@@ -1,5 +1,5 @@
 .film {
-    height: 450px;
+    min-height: 450px;
     width: 1000x;
     background-color: black;
     display: flex;
@@ -9,6 +9,8 @@
     position: fixed;
     top: 100px;
     left: 100px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 10px;
     }
 
 .info {
@@ -33,10 +35,13 @@
     cursor: pointer;
     width: 500px;
     height: 50px;
-    font-size: 40px;
+    font-size: 36px;
     background-color: grey;
     border-radius: 20px;
     transition: all, ease-in, .2s;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .modalButton:hover {

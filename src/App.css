@@ -4,12 +4,37 @@
 
 .App {
   text-align: center;
-  background-color: rgb(18, 28, 28);
+  background-color: black;
   color: white;
-  font-family: 'Arial Narrow Bold', sans-serif;
 }
 
 .topBar {
   display: flex;
   align-items: space-evenly;
 }
+
+.header {
+  text-shadow: 2px 4px 2px indianred;
+  padding: 10px;
+  border: dashed 5px indianred;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 7px;
+  opacity: 70%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkslategrey;
+  opacity: 100%;
+}
+
