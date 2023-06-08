@@ -5,7 +5,8 @@ import List from '../List/List'
 export default function Genre({apiKey}){
     const [genres,setGenres] = useState([])
     const [selectedGenre, setSelectedGenre] = useState('')
-    const [selectedResults, setSelectedResults] = useState([])
+    // const [selectedName, setSelectedName] = useState('')
+    const [genreResults, setGenreResults] = useState([])
     useEffect(()=>{
         fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
         .then(res=>res.json())
@@ -14,24 +15,22 @@ export default function Genre({apiKey}){
     useEffect(()=>{
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${selectedGenre}`)
         .then(res=>res.json())
-        .then(res=>setSelectedResults(res.results))
+        .then(res=>setGenreResults(res.results))
     },[selectedGenre])
 
     const handleChange = (e)=>{
         e.preventDefault()
         setSelectedGenre(e.target.value);
-        console.log(e.target.value)
     }
-  // console.log(selectedResults, 'selectedResults')
+   console.log(selectedGenre)
     return (
         <>
-        <select className='searchGenre' value={selectedGenre} onChange={handleChange}>
+        <select className='searchGenre' value={selectedGenre} onChange={handleChange} onClick={(e)=>console.log(e.target.innerText)}>
             <option defaultValue>Search Genre</option>
             {genres.map(genre=><option className='genre' value={genre.id} key={genre.id}>{genre.name}</option>)}
         </select>
         <div className={selectedGenre!=='' ? 'visible' : 'hidden'}>
-            <h1>{selectedGenre.name}</h1>
-            {/* <List results={selectedResults}/> */}
+            <List results={genreResults}/>
          </div>
         </>
 
