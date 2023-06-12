@@ -13,10 +13,29 @@
   height: 150px;
   width: 150px;
   /* position: absolute; */
+  display: none;
+}
+
+.theaterGraphic {
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+}
+
+.theaterLights {
+  height: 350px;
+  width: 580px;
 }
 
 .top {
-  font-size: 40px;
+  font-size: 55px;
+  position: absolute;
+  z-index: 1;
+  left: 522px;
+  top: 130px;
+  background-color: transparent;
+  color: black;
+  font-family: 'Trebuchet MS';
 }
 
 .header {
