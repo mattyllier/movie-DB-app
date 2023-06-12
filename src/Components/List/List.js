@@ -33,8 +33,8 @@ export default function List({results}){
         const content = scroll.scrollWidth
         const amount = 1200
         const interval = setInterval(()=>{
-            scroll.scrollLeft + offset > content ? scroll.scrollLeft = 0 : scroll.scrollLeft += amount
-        },20000)
+            scroll.scrollLeft + offset >= content ? scroll.scrollLeft = 0 : scroll.scrollLeft += amount
+        },2000)
         setScrollInterval(interval)
         return ()=> clearInterval(interval)
     },[])

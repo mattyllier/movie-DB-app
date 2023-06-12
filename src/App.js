@@ -7,6 +7,8 @@ import Graphic from './bright-neon-cinema-sign-with-movie-camera-vector.jpg'
 
 function App() {
   const [trending,setTrending] = useState([])
+ // const [savedFilm, setSavedFilm] = useState({})
+  //const [savedList,setSavedList] = useState([])
   const [topAction, setTopAction] = useState([])
   const [topSciFi, setTopSciFi] = useState([])
   const [topFamily, setTopFamily] = useState([])
@@ -15,6 +17,13 @@ function App() {
   const [topHorror, setTopHorror] = useState([])
 
   const apiKey = '794aa50d4099c47177386a08691f3ce6'
+  //const updateSavedList = ()=>{
+   // setSavedList(savedList.push(localStorage.getItem('savedFilm')))
+ // }
+//console.log(localStorage.getItem('savedFilm'), savedList, 'list')
+  // useEffect(()=>{
+  //   updateSavedList()
+  // },[savedFilm])
 
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
@@ -64,7 +73,7 @@ function App() {
   
   return (
     <div className="App">
-      <img className='graphic' src={Graphic}></img>
+      <img className='graphic' alt='graphic' src={Graphic}></img>
       <h1 className='top'>Title</h1>
       <div>
         <Search apiKey={apiKey}/>

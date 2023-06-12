@@ -22,7 +22,8 @@
 .header {
   text-shadow: 2px 4px 2px indianred;
   padding: 10px;
-  border: dashed 5px indianred;
+  /* border: dashed 5px indianred; */
+  background: linear-gradient(0.25turn, red, black, red);
 }
 
 ::-webkit-scrollbar {

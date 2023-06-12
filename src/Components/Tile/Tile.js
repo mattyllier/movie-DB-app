@@ -29,7 +29,7 @@ export default function Tile({ id , setSelected}) {
     return (
         <>
             <div className={modalOpen ? 'film' : 'hidden'}>
-                <iframe className='iframe' src={`https://www.youtube.com/embed/${trailer}?enablejsapi=1`} />
+                <iframe className='iframe' title='trailer' src={`https://www.youtube.com/embed/${trailer}?enablejsapi=1`} />
                 <div className='info'>
                     <button className='modalButton' onClick={handleClick}><GrClose className='modalIcon'/></button>
                     <h1>{info.title}</h1>
@@ -37,7 +37,7 @@ export default function Tile({ id , setSelected}) {
                     <h3>{info.runtime!== 0 ? `${info.runtime} min` : ''}</h3>
                     <h3>{info.vote_average!== 0 ? `Rating: ${info.vote_average}` : ''}</h3>
                     <h5>{info.overview}</h5>
-                    <button className='modalButton' onClick={console.log(info)}>Save to Watchlist</button>
+                    <button className='modalButton' onClick={localStorage.setItem('savedFilm',JSON.stringify(info))}>Save to Watchlist</button>
                 </div>
             </div>
         </>

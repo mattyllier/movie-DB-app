@@ -20,12 +20,12 @@ export default function Genre({apiKey}){
         fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`)
         .then(res=>res.json())
         .then(res=>setGenres(res.genres))
-    },[])
+    },[apiKey])
     useEffect(()=>{
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&with_genres=${selectedGenre}`)
         .then(res=>res.json())
         .then(res=>setGenreResults(res.results))
-    },[selectedGenre])
+    },[selectedGenre,apiKey])
 
     const handleChange = (e)=>{
         e.preventDefault()
