@@ -5,14 +5,12 @@
 
 .App {
   text-align: center;
-  /* background-color: black; */
   color: white;
 }
 
 .graphic {
   height: 150px;
   width: 150px;
-  /* position: absolute; */
   display: none;
 }
 
@@ -31,7 +29,7 @@
   font-size: 55px;
   position: absolute;
   z-index: 1;
-  left: 522px;
+  left: 650px;
   top: 130px;
   background-color: transparent;
   color: black;
@@ -41,7 +39,6 @@
 .header {
   text-shadow: 2px 4px 2px indianred;
   padding: 10px;
-  /* border: dashed 5px indianred; */
   background: linear-gradient(0.25turn, red, black, red);
 }
 

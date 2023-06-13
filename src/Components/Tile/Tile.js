@@ -2,6 +2,15 @@ import './Tile.css'
 import { useState, useEffect } from 'react'
 import {GrClose} from 'react-icons/gr'
 
+/* The Tile component shows info about a specific film as well as the trailer when selected. The id of a film saved onClick in the 
+List component is used to fetch info about the film and display it in a modal window which appears when a poster in the list is clicked.
+The trailer of the film is also fetched, this yields multiple results, hence the displayed trailer is filtered to include the 'trailer'
+in the title and only the first result is displayed. useState is implemented for the modalOpen logic, which allows the window to be closed.
+The selected state passed from the List component is also reset */
+
+/* Ternaries are used to account for some results not being applicable in the categories that are being display, for example, the
+rating category will not appear for films that have not yet been released, as opposed to showing the category empty*/
+
 export default function Tile({ id , setSelected}) {
     const apiKey = '794aa50d4099c47177386a08691f3ce6'
     const [trailer, setTrailer] = useState('')

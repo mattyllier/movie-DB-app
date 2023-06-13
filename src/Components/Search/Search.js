@@ -2,6 +2,11 @@ import './Search.css'
 import {useState,useEffect} from 'react'
 import List from '../List/List'
 
+/* The Search component enables the user to search the database based on a query string. The useState hook is implemented to set the
+search query type into the input bar. The useEffect then watches for that state to update and with each keystroke, fetches a new list
+of films that sends them to the List component for rendering. This component remains inactive if there is no text in the input bar,
+the searchIsActive state is used to show or hide the list generated as a result of this component */
+
 export default function Search(props){
     const [search,setSearch] = useState('')
     const [filtered,setFiltered] = useState([])
