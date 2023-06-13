@@ -16,6 +16,10 @@ function App() {
   const [topHorror, setTopHorror] = useState([])
   const apiKey = '794aa50d4099c47177386a08691f3ce6'
 
+  /* The App component serves as the parent for the other components. Several fetches are made in tandem with useState in order to
+  retrieve film posters to populate featured sections. The search, genre filter, and featured sections are all individual List components
+  within the App. An api key is used to fetch these results from the site The Movie Database */
+
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
     .then(res=>res.json())
