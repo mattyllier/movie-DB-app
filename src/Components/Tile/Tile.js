@@ -12,7 +12,7 @@ The selected state passed from the List component is also reset */
 rating category will not appear for films that have not yet been released, as opposed to showing the category empty*/
 
 export default function Tile({ id , setSelected}) {
-    const apiKey = '794aa50d4099c47177386a08691f3ce6'
+    const apiKey = process.env.REACT_APP_API_KEY
     const [trailer, setTrailer] = useState('')
     const [modalOpen, setModalOpen] = useState(true)
     const [info, setInfo] = useState([])

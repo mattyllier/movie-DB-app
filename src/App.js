@@ -13,8 +13,8 @@ function App() {
   const [topFamily, setTopFamily] = useState([])
   const [topDocs, setTopDocs] = useState([])
   const [topComedy, setTopComedy] = useState([])
-  const [topHorror, setTopHorror] = useState([])
-  const apiKey = '794aa50d4099c47177386a08691f3ce6'
+  const [topHorror, setTopHorror] = useState([]) 
+  const apiKey = process.env.REACT_APP_API_KEY
 
   /* The App component serves as the parent for the other components. Several fetches are made in tandem with useState in order to
   retrieve film posters to populate featured sections. The search, genre filter, and featured sections are all individual List components
